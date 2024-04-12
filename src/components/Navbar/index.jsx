@@ -12,6 +12,9 @@ const Navbar = () => {
         <li>
           <Link to="/to-watch-movies">Peliculas Por Ver</Link>
         </li>
+        <li>
+          <Link to="/subscribe">Suscribete</Link>
+        </li>
       </ul>
     </nav>
   );

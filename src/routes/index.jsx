@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Detail from "../pages/Detail";
 import WatchedMoviesPage from "../pages/WatchedMoviesPage";
 import ToWatchMoviesPage from "../pages/ToWacthMoviesPage";
+import SubscribePage from "../pages/SubscribePage"
 import Error404 from "../pages/Error404";
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         path: "/to-watch-movies",
         element: <ToWatchMoviesPage />,
       },
+      {
+        path: "/subscribe",
+        element: <SubscribePage />,
+      }
     ],
   },
 ]);

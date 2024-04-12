@@ -1,11 +1,11 @@
-import useListMovies from "../../hooks/useListsMovies";
+import useListsMovies from "../../hooks/useListsMovies";
 import useMoviesResults from "../../state/movies-results";
 import ButtonToAddToWatchList from "../ButtonToAddToWatchList";
 import ButtonToAddToWatchedList from "../ButtonToAddToWatchedList";
 
 const MoviesDetails = ({ movieDetail }) => {
   const { IMAGE_PATH } = useMoviesResults();
-  const { addToWatchList, addToWatchedList } = useListMovies();
+  const { addToWatchList, addToWatchedList } = useListsMovies();
   const { title, poster_path, overview, genres, release_date, runtime } =
     movieDetail;
   return (

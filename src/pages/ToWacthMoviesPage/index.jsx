@@ -1,9 +1,9 @@
 import ToWatchMovies from "../../components/ToWatchMovies";
-import useListMovies from "../../hooks/useListsMovies";
+import useListsMovies from "../../hooks/useListsMovies";
 
 const ToWatchMoviesPage = () => {
   const { watchList, handleDeleteWatchMovie, addToWatchedList } =
-    useListMovies();
+    useListsMovies();
 
   const handleMovieSaw = (movie) => {
     handleDeleteWatchMovie(movie.id); // Eliminar la película de la lista de películas por ver

@@ -22,7 +22,6 @@ const WatchedMovies = ({ watchedList, onDeleteWatchedMovie }) => {
           <button onClick={() => onDeleteWatchedMovie(movie.id)}>
             Eliminar
           </button>
-          <button>No Vista</button>
         </div>
       ))}
     </div>

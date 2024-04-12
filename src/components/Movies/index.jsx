@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import useListMovies from "../../hooks/useListsMovies";
+import useListsMovies from "../../hooks/useListsMovies";
 import MovieCard from "./MovieCard";
 import useMoviesResults from "../../state/movies-results";
 
@@ -11,7 +11,7 @@ const Movies = () => {
   //Obtener Peliculas y ruta de las imagenes de la API
   const { movies, IMAGE_PATH, fetchMovies } = useMoviesResults();
 
-  const { addToWatchList, addToWatchedList } = useListMovies();
+  const { addToWatchList, addToWatchedList } = useListsMovies();
 
   useEffect(() => {
     fetchMovies(searchKey);

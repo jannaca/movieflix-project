@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useListMovies = () => {
+const useListsMovies = () => {
   // Establecer Lista de Peliculas vistas
   const [watchedList, setWatchedList] = useState(
     localStorage.getItem("watchedList")
@@ -8,14 +8,14 @@ const useListMovies = () => {
       : []
   );
 
-   // Establecer Lista de Peliculas para ver
-   const [watchList, setWatchList] = useState(
+  // Establecer Lista de Peliculas para ver
+  const [watchList, setWatchList] = useState(
     localStorage.getItem("watchList")
       ? JSON.parse(localStorage.getItem("watchList"))
       : []
   );
 
-  //Agrego una pelicula vista a la lista
+  //Agrego una pelicula a la lista
   const addToWatchedList = (movie) => {
     const alreadyAdded = watchedList.find((item) => item.id === movie.id);
 
@@ -36,7 +36,6 @@ const useListMovies = () => {
     }
   };
 
-
   //Actualizo cada vez que las listas cambian
   useEffect(() => {
     localStorage.setItem("watchedList", JSON.stringify(watchedList));
@@ -46,17 +45,17 @@ const useListMovies = () => {
     localStorage.setItem("watchList", JSON.stringify(watchList));
   }, [watchList]);
 
+  // Eliminar una película
+
   const handleDeleteWatchedMovie = (id) => {
     // Filtra la lista de observación para eliminar la película con el ID dado
     const updatedWatchList = watchedList.filter((movie) => movie.id !== id);
     // Actualiza la lista de observación
     setWatchedList(updatedWatchList);
     localStorage.setItem("watchedList", JSON.stringify(updatedWatchList));
-    
   };
 
-   // Eliminar una película de la lista de películas para ver
-   const handleDeleteWatchMovie = (id) => {
+  const handleDeleteWatchMovie = (id) => {
     const updatedWatchList = watchList.filter((movie) => movie.id !== id);
     setWatchList(updatedWatchList);
     localStorage.setItem("watchList", JSON.stringify(updatedWatchList));
@@ -68,8 +67,8 @@ const useListMovies = () => {
     watchList,
     watchedList,
     handleDeleteWatchedMovie,
-    handleDeleteWatchMovie
+    handleDeleteWatchMovie,
   };
 };
 
-export default useListMovies;
+export default useListsMovies;

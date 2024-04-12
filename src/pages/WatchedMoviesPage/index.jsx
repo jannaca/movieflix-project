@@ -1,8 +1,8 @@
 import WatchedMovies from "../../components/WatchedMovies";
-import useListMovies from "../../hooks/useListsMovies";
+import useListsMovies from "../../hooks/useListsMovies";
 
 const WatchedMoviesPage = () => {
-  const { watchedList, handleDeleteWatchedMovie } = useListMovies();
+  const { watchedList, handleDeleteWatchedMovie } = useListsMovies();
 
   return (
     <div>
