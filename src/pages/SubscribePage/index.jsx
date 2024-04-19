@@ -1,6 +1,8 @@
+import SuscribeForm from "../../components/SubscribeForm"
+
 const SubscribePage = () => {
     return(<>
-    Suscribete
+    <SuscribeForm/>
     </>)
 }
 
