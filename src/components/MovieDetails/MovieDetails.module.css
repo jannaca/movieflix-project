@@ -1,0 +1,11 @@
+
+.containerMovie {
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    margin: auto;
+  }
+  
+.infoMovieContainer {
+  margin-left: 20px;
+}

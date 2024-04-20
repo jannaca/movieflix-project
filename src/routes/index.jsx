@@ -1,6 +1,6 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Home from "../pages/Home";
-import Navbar from "../components/Navbar";
+import MyNavbar from "../components/Navbar";
 import Detail from "../pages/Detail";
 import WatchedMoviesPage from "../pages/WatchedMoviesPage";
 import ToWatchMoviesPage from "../pages/ToWacthMoviesPage";
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
   {
     element: (
       <>
-        <Navbar />
+        <MyNavbar />
         <Outlet />
       </>
     ),errorElement: <Error404/>,

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MoviesDetails from "../../components/MovieDetails";
-import TrailerPlayer from "../../components/TrailerPlayer";
+// import TrailerPlayer from "../../components/TrailerPlayer";
 import useMoviesDetailResults from "../../state/movies-detail-results"
 import "./index.css";
 
 const Detail = () => {
   const { movieId } = useParams();
-  const [playing, setPlaying] = useState(false);
+  // const [playing, setPlaying] = useState(false);
   // const { movieDetail, trailer } = useFetchMovieDetails(movieId);
   const { movieDetail, trailer, fetchMovieDetail, fetchMovieVideo } =
     useMoviesDetailResults();
@@ -18,9 +18,9 @@ const Detail = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <>
       {movieDetail && <MoviesDetails movieDetail={movieDetail} />}
-      {playing ? (
+      {/* {playing ? (
         <TrailerPlayer
           trailer={trailer}
           setPlaying={setPlaying}
@@ -41,8 +41,8 @@ const Detail = () => {
             )}
           </div>
         </div>
-      )}
-    </div>
+      )} */}
+    </>
   );
 };
 

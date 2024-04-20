@@ -1,0 +1,14 @@
+#navBarBg {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.navItem{
+    margin: auto;
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+.navItemDropdown {
+    margin-left:20px ;
+}

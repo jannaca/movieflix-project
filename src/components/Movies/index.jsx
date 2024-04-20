@@ -5,6 +5,11 @@ import useListsMovies from "../../hooks/useListsMovies";
 import MovieCard from "./MovieCard";
 import useMoviesResults from "../../state/movies-results";
 
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import { Row, Col } from 'react-bootstrap';
+
+
 const Movies = () => {
   // --- VARIABLES----
   const [searchKey, setSearchKey] = useState("");
@@ -39,31 +44,41 @@ const Movies = () => {
   // --- FUNCIONES----
 
   return (
-    <div>
-      <div>
-        <h2>Buscador</h2>
-        <form onSubmit={searchMovies}>
-          <input
-            type="text"
-            placeholder="Buscar"
-            value={searchKey}
-            onChange={(e) => setSearchKey(e.target.value)}
-          />
-          <button onClick={() => deleteSearch()}>X</button>
-        </form>
+    <Container>
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="col-md-4">
+          <h3 className="fst-italic">Descubre nuevas películas</h3>
+          <Form onSubmit={searchMovies} className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              value={searchKey}
+              aria-label="Search"
+              onChange={(e) => setSearchKey(e.target.value)}
+            />
+          </Form>
+        </div>
       </div>
+      <div>
       {searchKey === "" && <h2>Peliculas Populares</h2>}
-      {movies.map((movie) => (
-        <MovieCard
-          key={`movie-item-${movie.id}`}
-          title={movie.title}
-          image={`${IMAGE_PATH}${movie.poster_path}`}
-          OnDetailClick={() => handleDetailClick(movie.id)}
-          OnAddToWatchList={() => addToWatchList(movie)}
-          OnAddToWatchedList={() => addToWatchedList(movie)}
-        />
-      ))}
+      <Row xs={1}  md={3} lg={4} className="g-4">
+        {movies.map((movie) => (
+  
+            <Col key={`movie-item-${movie.id}` } className="d-flex" >
+            <MovieCard
+              title={movie.title}
+              image={`${IMAGE_PATH}${movie.poster_path}`}
+              OnDetailClick={() => handleDetailClick(movie.id)}
+              OnAddToWatchList={() => addToWatchList(movie)}
+              OnAddToWatchedList={() => addToWatchedList(movie)}
+            />
+          </Col>
+
+        ))}
+      </Row>
     </div>
+    </Container>
   );
 };
 

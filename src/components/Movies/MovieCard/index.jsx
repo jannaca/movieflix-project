@@ -1,6 +1,7 @@
 import ButtonSeeMore from "../../ButtonSeeMore";
 import ButtonToAddToWatchList from "../../ButtonToAddToWatchList";
 import ButtonToAddToWatchedList from "../../ButtonToAddToWatchedList";
+import styles from "./MovieCard.module.css";
 
 const MovieCard = ({
   title,
@@ -10,12 +11,16 @@ const MovieCard = ({
   OnAddToWatchedList,
 }) => {
   return (
-    <div>
-      <h4>{title}</h4>
-      <img src={image} alt={title} height={600} width={400} />
-      <ButtonSeeMore OnDetailClick={OnDetailClick} />
-      <ButtonToAddToWatchList OnAddToWatchList={OnAddToWatchList} />
-      <ButtonToAddToWatchedList OnAddToWatchedList={OnAddToWatchedList} />
+    <div className={styles.container}>
+      <img src={image} alt={title} className={styles.imageStyle} />
+      <div className={styles.overlay}>
+        <h4 className={styles.titleStyle}>{title}</h4>
+        <div className="mt-2">
+          <ButtonSeeMore OnDetailClick={OnDetailClick} />
+          <ButtonToAddToWatchList OnAddToWatchList={OnAddToWatchList} />
+          <ButtonToAddToWatchedList OnAddToWatchedList={OnAddToWatchedList} />
+        </div>
+      </div>
     </div>
   );
 };
