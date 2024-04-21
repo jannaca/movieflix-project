@@ -25,7 +25,7 @@ const SuscribeForm = () => {
     <Container className={styles.containerForm}>
       <Row xs={1} md={2} lg={2} className="g-4 m-auto">
         <Col>
-          <h2 className={styles.honkLogo}>Suscribete</h2>
+          <h2 className={styles.honkLogo}>Suscríbete</h2>
           <p className={styles.pStyle}> 
             Completa este formulario con tus datos para recibir recomendaciones
             y noticias semanales sobre películas en tu correo electrónico.

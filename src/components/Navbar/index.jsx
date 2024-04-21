@@ -37,7 +37,7 @@ const MyNavbar = () => {
               </Nav.Item>
               <Nav.Item className={styles.navItem}>
                 <Link to="/subscribe" className={styles.navItem}>
-                  Suscribete
+                  Suscríbete
                 </Link>
               </Nav.Item>
             </Nav>

@@ -1,0 +1,25 @@
+.honkLogo {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 15, "SHLN" 50;
+  font-size: 60px;
+}
+
+.emoji {
+  font-size: 30px;
+}
+
+.startNow {
+  text-decoration: none;
+  background-color: #8b1bf5;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.startNow:hover {
+  color: #8b1bf5;
+  background-color: #ffe81c;
+}
