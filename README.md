@@ -1,6 +1,6 @@
 <h1 align="center"> -----🎬 MovieFlix 🎬---- </h1>
 
-<p>Proyecto desarrollado como parte de un bootcamp.</p>
+<p>Proyecto desarrollado como parte de un bootcamp.🐊</p>
 
 <h2>Tecnologías Utilizadas</h2>
 <ul>
