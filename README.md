@@ -1,8 +1,46 @@
-# React + Vite
+<h1 align="center"> -----🎬 MovieFlix 🎬---- </h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p>Proyecto desarrollado como parte de un bootcamp.</p>
 
-Currently, two official plugins are available:
+<h2>Tecnologías Utilizadas</h2>
+<ul>
+  <li>React + Vite</li>
+  <li>TMDB API</li>
+  <li>Bootstrap</li>
+  <li>React Router</li>
+  <li>localStorage</li>
+  <li>React Hook Form</li>
+  <li>Vitest</li>
+  <li>React Testing Library</li>
+  <li>Vercel</li>
+</ul>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>Instalación</h2>
+
+<h3>1.Clonar el repositorio</h3>
+
+```
+git clone https://github.com/jannaca/movieflix-project.git
+```
+
+<h3>2.Navega al directorio del proyecto</h3>
+
+```
+cd movieflix-project
+```
+
+<h3>3.Instala las dependencias</h3>
+
+```
+npm install
+```
+
+<h3>3.Ejecutar pruebas unitarias</h3>
+
+```
+npm test
+```
+
+<h2>---Live DEMO ---</h2>
+
+[página web](https://movieflix-project-eight.vercel.app/)
