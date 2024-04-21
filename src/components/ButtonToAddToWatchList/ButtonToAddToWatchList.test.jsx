@@ -7,7 +7,7 @@ describe("ButtonToAddToWatchList component", () => {
     const OnAddToWatchList = vi.fn();
     render(<ButtonToAddToWatchList OnAddToWatchList={OnAddToWatchList} />);
 
-    fireEvent.click(screen.getByText("To watch"));
+    fireEvent.click(screen.getByTestId("button-watchList"));
     expect(OnAddToWatchList).toHaveBeenCalledTimes(1);
   });
 });

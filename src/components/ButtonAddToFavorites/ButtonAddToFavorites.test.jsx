@@ -4,12 +4,10 @@ import ButtonAddToFavorites from "./index";
 
 describe("ButtonAddToFavorites component", () => {
   test("clicking on button should call OnAddToFavorite", () => {
-    const OnAddToFavorite = vi.fn();
-    render(
-      <ButtonAddToFavorites OnAddToFavorite={OnAddToFavorite} />
-    );
+    const OnAddToFavorites = vi.fn();
+    render(<ButtonAddToFavorites OnAddToFavorites={OnAddToFavorites} />);
 
-    fireEvent.click(screen.getByText("Watched"));
-    expect(OnAddToFavorite).toHaveBeenCalledTimes(1);
+    fireEvent.click(screen.getByTestId("button-favorites"));
+    expect(OnAddToFavorites).toHaveBeenCalledTimes(1);
   });
 });

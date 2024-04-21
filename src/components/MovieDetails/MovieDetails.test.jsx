@@ -19,8 +19,8 @@ test("renders movie details correctly", () => {
   expect(screen.getByText("Mock Movie Title")).toBeDefined();
   expect(screen.getByAltText("Mock Movie Title")).toBeDefined();
   expect(screen.getByText("This is a mock movie overview")).toBeDefined();
-  expect(screen.getByText("Action")).toBeDefined();
-  expect(screen.getByText("Adventure")).toBeDefined();
+  expect(screen.getByText(/Action/)).toBeDefined();
+  expect(screen.getByText(/Adventure/)).toBeDefined();
   expect(screen.getByText("2022-04-15")).toBeDefined();
   expect(screen.getByText("120 min")).toBeDefined();
 });
