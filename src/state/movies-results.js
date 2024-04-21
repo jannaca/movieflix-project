@@ -13,8 +13,8 @@ const useMoviesResults = create((set) => ({
         `${API_URL}/${type}/movie?query=${searchKey}&language=${API_LANGUAGE}&include_adult=false&api_key=${API_KEY}`
       );
       const data = await response.json();
-    
-      await set(()=>({movies: data.results}))
+
+      await set(() => ({ movies: data.results }));
     } catch (error) {
       console.log(error);
     }

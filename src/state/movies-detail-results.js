@@ -19,13 +19,12 @@ const useMoviesDetailResults = create((set) => ({
     }
   },
   fetchMovieVideo: async (movieId) => {
-   
     try {
       const response = await fetch(
         `${API_URL}/movie/${movieId}/videos?language=es&api_key=${API_KEY}`
       );
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
 
       if (data.results) {
         const findTrailer = data.results.find(

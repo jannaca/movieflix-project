@@ -9,8 +9,8 @@ const ToWatchMoviesPage = () => {
     useListsMovies();
 
   const handleFavoriteMovie = (movie) => {
-    handleDeleteWatchMovie(movie.id); // Eliminar la película de la lista de películas por ver
-    addToFavoriteList(movie); // Agregar la película a la lista de películas vistas
+    handleDeleteWatchMovie(movie.id); 
+    addToFavoriteList(movie); 
   };
 
   return (

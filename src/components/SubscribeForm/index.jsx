@@ -13,7 +13,6 @@ const SuscribeForm = () => {
 
   const handleSubmitForm = (data) => {
     localStorage.setItem("suscribeData", JSON.stringify(data));
-    console.log("Formulario enviado");
   };
 
   const handleResetForm = () => {

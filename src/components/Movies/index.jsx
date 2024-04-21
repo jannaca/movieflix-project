@@ -26,12 +26,6 @@ const Movies = () => {
   //Evito que el Formulario se envie Automaticamente
   const searchMovies = (e) => {
     e.preventDefault();
-    console.log(movies);
-  };
-
-  //Limpio el Input de Busqueda
-  const deleteSearch = () => {
-    setSearchKey("");
   };
 
   //Dirigo al usuario a la pagina de detalles
@@ -42,7 +36,7 @@ const Movies = () => {
   // --- FUNCIONES----
 
   return (
-    <Container>
+    <Container className="mb-5">
       <div className="d-flex justify-content-center align-items-center">
         <div className="col-md-4 text-center">
           <h2 className={styles.honkLogo}>MovieFlix</h2>

@@ -12,7 +12,7 @@ const ToWatchMovies = ({ watchList, onDeleteWatchMovie }) => {
   };
 
   return (
-    <Container>
+    <Container className="mb-5">
       <Row xs={1} md={3} lg={4} className="g-4">
         {watchList.map((movie) => (
           <Col key={movie.id} className="d-flex">

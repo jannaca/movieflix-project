@@ -4,23 +4,23 @@ import MyNavbar from "../components/Navbar";
 import Detail from "../pages/Detail";
 import FavoriteMoviesPage from "../pages/FavoriteMoviesPage";
 import ToWatchMoviesPage from "../pages/ToWacthMoviesPage";
-import SubscribePage from "../pages/SubscribePage"
+import SubscribePage from "../pages/SubscribePage";
 import Error404 from "../pages/Error404";
 
-const router = createBrowserRouter([
+const routes = createBrowserRouter([
   {
     element: (
       <>
         <MyNavbar />
         <Outlet />
       </>
-    ),errorElement: <Error404/>,
-    
+    ),
+    errorElement: <Error404 />,
+
     children: [
       {
         path: "/",
         element: <Home />,
-       
       },
       {
         path: "/detail/:movieId",
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/favorite-movies",
-        element: <FavoriteMoviesPage/>,
+        element: <FavoriteMoviesPage />,
       },
       {
         path: "/to-watch-movies",
@@ -37,13 +37,13 @@ const router = createBrowserRouter([
       {
         path: "/subscribe",
         element: <SubscribePage />,
-      }
+      },
     ],
   },
 ]);
 
 const Routes = () => {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={routes} />;
 };
 
 export default Routes;
