@@ -23,19 +23,19 @@
 git clone https://github.com/jannaca/movieflix-project.git
 ```
 
-<h3>2.Navega al directorio del proyecto</h3>
+<h3>2. Navega al directorio del proyecto</h3>
 
 ```
 cd movieflix-project
 ```
 
-<h3>3.Instala las dependencias</h3>
+<h3>3. Instala las dependencias</h3>
 
 ```
 npm install
 ```
 
-<h3>3.Ejecutar pruebas unitarias</h3>
+<h3>4. Ejecutar pruebas unitarias</h3>
 
 ```
 npm test
