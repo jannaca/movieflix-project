@@ -25,14 +25,16 @@ const ToWatchMovies = ({ watchList, onDeleteWatchMovie }) => {
               <div className={styles.overlay}>
                 <h4 className={styles.titleStyle}>{movie.title}</h4>
                 <div>
-                <ButtonSeeMore
-                  OnDetailClick={() => handleDetailClick(movie.id)}
-                />
-                <button className={styles.buttonListStyle} onClick={() => onDeleteWatchMovie(movie.id)}>
-                  <i class="bi bi-x-lg"></i>
-                </button>
+                  <ButtonSeeMore
+                    OnDetailClick={() => handleDetailClick(movie.id)}
+                  />
+                  <button
+                    className={styles.buttonListStyle}
+                    onClick={() => onDeleteWatchMovie(movie.id)}
+                  >
+                    <i className="bi bi-x-lg"></i>
+                  </button>
                 </div>
-   
               </div>
             </div>
           </Col>

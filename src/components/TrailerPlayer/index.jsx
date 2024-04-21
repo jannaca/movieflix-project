@@ -1,9 +1,10 @@
 import YouTube from "react-youtube";
+import styles from "../MovieDetails/MovieDetails.module.css";
 
 const TrailerPlayer = ({ trailer, setPlaying }) => {
   const opts = {
     width: "100%",
-    height: "100%",
+    height: "650px",
     playerVars: {
       autoplay: 1,
       controls: 0,
@@ -23,8 +24,11 @@ const TrailerPlayer = ({ trailer, setPlaying }) => {
         className="reproductor container"
         opts={opts}
       />
-      <button onClick={() => setPlaying(false)} >
-        Close
+      <button
+        className={styles.buttonTrailer}
+        onClick={() => setPlaying(false)}
+      >
+        Cerrar
       </button>
     </>
   );
