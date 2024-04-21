@@ -1,12 +1,11 @@
 import ButtonSeeMore from "../ButtonSeeMore";
 import { useNavigate } from "react-router-dom";
-import useMoviesResults from "../../state/movies-results";
-import { Row, Col, Container } from "react-bootstrap";
-import styles from "./ToWatchMovies.module.css";
 
-const ToWatchMovies = ({ watchList, onDeleteWatchMovie }) => {
+import { Row, Col, Container } from "react-bootstrap";
+import styles from "./FavoriteMovies.module.css";
+
+const FavoriteMovies = ({ favoriteList, onDeleteFavoriteMovie }) => {
   const navigate = useNavigate(); // permite dirigirme a otras rutas
-  const { IMAGE_PATH } = useMoviesResults();
   const handleDetailClick = (id) => {
     navigate(`/detail/${id}`);
   };
@@ -14,25 +13,25 @@ const ToWatchMovies = ({ watchList, onDeleteWatchMovie }) => {
   return (
     <Container>
       <Row xs={1} md={3} lg={4} className="g-4">
-        {watchList.map((movie) => (
+        {favoriteList.map((movie) => (
           <Col key={movie.id} className="d-flex">
             <div className={styles.container}>
               <img
-                src={`${IMAGE_PATH}${movie.poster_path}`}
+                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                 alt={movie.title}
                 className={styles.imageStyle}
               />
               <div className={styles.overlay}>
                 <h4 className={styles.titleStyle}>{movie.title}</h4>
+
                 <div>
                 <ButtonSeeMore
                   OnDetailClick={() => handleDetailClick(movie.id)}
                 />
-                <button className={styles.buttonListStyle} onClick={() => onDeleteWatchMovie(movie.id)}>
-                  <i class="bi bi-x-lg"></i>
+                <button className={styles.buttonListStyle} onClick={() => onDeleteFavoriteMovie(movie.id)}>
+                <i class="bi bi-x-lg"></i>
                 </button>
                 </div>
-   
               </div>
             </div>
           </Col>
@@ -42,4 +41,4 @@ const ToWatchMovies = ({ watchList, onDeleteWatchMovie }) => {
   );
 };
 
-export default ToWatchMovies;
+export default FavoriteMovies;

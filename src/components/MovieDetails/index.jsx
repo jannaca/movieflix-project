@@ -1,41 +1,41 @@
 import useListsMovies from "../../hooks/useListsMovies";
 import useMoviesResults from "../../state/movies-results";
 import ButtonToAddToWatchList from "../ButtonToAddToWatchList";
-import ButtonToAddToWatchedList from "../ButtonToAddToWatchedList";
+import ButtonAddToFavorites from "../ButtonAddToFavorites";
 import TrailerPlayer from "../TrailerPlayer";
 import { useState } from "react";
 import useMoviesDetailResults from "../../state/movies-detail-results";
-import Container from "react-bootstrap/Container";
 import styles from "./MovieDetails.module.css";
+import { Row, Col, Container } from "react-bootstrap";
+
 
 const MoviesDetails = ({ movieDetail }) => {
   const { IMAGE_PATH } = useMoviesResults();
-  const { addToWatchList, addToWatchedList } = useListsMovies();
+  const { addToWatchList, addToFavoriteList } = useListsMovies();
   const { title, poster_path, overview, genres, release_date, runtime } =
     movieDetail;
   const [playing, setPlaying] = useState(false);
   const { trailer } = useMoviesDetailResults();
   return (
     <Container>
-      <div className={styles.containerMovie}>
-        <div className={styles.imageCotainer}>
+      <Row xs={1} md={2} lg={2} className="g-0">
+        <Col className={styles.imageCotainer}>
           <img
             src={`${IMAGE_PATH + poster_path}`}
             alt={movieDetail.title}
-            height={600}
-            width={400}
+
           />
-        </div>
+        </Col>
+        <Col>
         <div className={styles.infoMovieContainer}>
           <h1>{title}</h1>
           <p>Descripcion</p>
           <p>{overview}</p>
           <p>Generos</p>
-          <ul>
             {genres.map((genre) => (
-              <li key={`genre-${genre.id}`}>{genre.name}</li>
+              <span key={`genre-${genre.id}`}>{genre.name}, </span>
             ))}
-          </ul>
+    
           <p>Fecha de Lanzamiento</p>
           <p>{release_date}</p>
           <p>Duracion</p>
@@ -44,8 +44,8 @@ const MoviesDetails = ({ movieDetail }) => {
             <ButtonToAddToWatchList
               OnAddToWatchList={() => addToWatchList(movieDetail)}
             />
-            <ButtonToAddToWatchedList
-              OnAddToWatchedList={() => addToWatchedList(movieDetail)}
+            <ButtonAddToFavorites
+              OnAddToFavorites={() => addToFavoriteList(movieDetail)}
             />
             {playing ? (
               <TrailerPlayer
@@ -71,7 +71,8 @@ const MoviesDetails = ({ movieDetail }) => {
             )}
           </div>
         </div>
-      </div>
+        </Col>
+      </Row>
     </Container>
   );
 };

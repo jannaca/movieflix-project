@@ -1,25 +1,22 @@
-.navBarContainer {
-  background-color: #8b1bf5;
-}
-
 .honkLogo {
   font-family: "Honk", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "MORF" 15, "SHLN" 50;
-  font-size: 30px;
+  font-size: 60px;
+  margin: 30px 0;
 }
 
-.navItem {
-  padding: 5px;
+.startNow {
   text-decoration: none;
+  background-color: #8b1bf5;
   color: #fff;
+  padding: 10px;
+  border-radius: 8px;
 }
-.navItem:hover {
-  font-weight: 500;
+
+.startNow:hover {
   color: #8b1bf5;
   background-color: #ffe81c;
-  padding: 5px;
-  border-radius: 8px;
 }

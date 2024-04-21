@@ -1,0 +1,37 @@
+.containerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.honkLogo {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 15, "SHLN" 50;
+  font-size: 60px;
+
+}
+
+.pStyle {
+  padding-right: 50px;
+}
+
+.buttonGroup{
+  margin-top: 20px;
+}
+
+#buttonGroupItem {
+  margin-right: 8px;
+  background-color: #8b1bf5;
+  border: none;
+}
+
+
+#buttonGroupItem:hover {
+  color: #8b1bf5;
+  background-color: #ffe81c;
+  border: none;
+}

@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 const useListsMovies = () => {
   // Establecer Lista de Peliculas vistas
-  const [watchedList, setWatchedList] = useState(
-    localStorage.getItem("watchedList")
-      ? JSON.parse(localStorage.getItem("watchedList"))
+  const [favoriteList, setFavoriteList] = useState(
+    localStorage.getItem("favoriteList")
+      ? JSON.parse(localStorage.getItem("favoriteList"))
       : []
   );
 
@@ -16,11 +16,11 @@ const useListsMovies = () => {
   );
 
   //Agrego una pelicula a la lista
-  const addToWatchedList = (movie) => {
-    const alreadyAdded = watchedList.find((item) => item.id === movie.id);
+  const addToFavoriteList = (movie) => {
+    const alreadyAdded = favoriteList.find((item) => item.id === movie.id);
 
     if (!alreadyAdded) {
-      setWatchedList((prevWatchedlist) => [...prevWatchedlist, movie]);
+      setFavoriteList((prevFavoriteList) => [...prevFavoriteList, movie]);
     } else {
       console.log("Ya esta agregada");
     }
@@ -38,8 +38,8 @@ const useListsMovies = () => {
 
   //Actualizo cada vez que las listas cambian
   useEffect(() => {
-    localStorage.setItem("watchedList", JSON.stringify(watchedList));
-  }, [watchedList]);
+    localStorage.setItem("favoriteList", JSON.stringify(favoriteList));
+  }, [favoriteList]);
 
   useEffect(() => {
     localStorage.setItem("watchList", JSON.stringify(watchList));
@@ -47,12 +47,12 @@ const useListsMovies = () => {
 
   // Eliminar una película
 
-  const handleDeleteWatchedMovie = (id) => {
+  const handleDeleteFavoriteMovie = (id) => {
     // Filtra la lista de observación para eliminar la película con el ID dado
-    const updatedWatchList = watchedList.filter((movie) => movie.id !== id);
+    const updatedWatchList = favoriteList.filter((movie) => movie.id !== id);
     // Actualiza la lista de observación
-    setWatchedList(updatedWatchList);
-    localStorage.setItem("watchedList", JSON.stringify(updatedWatchList));
+    setFavoriteList(updatedWatchList);
+    localStorage.setItem("favoriteList", JSON.stringify(updatedWatchList));
   };
 
   const handleDeleteWatchMovie = (id) => {
@@ -63,10 +63,10 @@ const useListsMovies = () => {
 
   return {
     addToWatchList,
-    addToWatchedList,
+    addToFavoriteList,
     watchList,
-    watchedList,
-    handleDeleteWatchedMovie,
+    favoriteList,
+    handleDeleteFavoriteMovie,
     handleDeleteWatchMovie,
   };
 };

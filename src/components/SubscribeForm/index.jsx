@@ -1,4 +1,6 @@
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import styles from "./SubscribeForm.module.css";
 
 const SuscribeForm = () => {
   const {
@@ -20,67 +22,90 @@ const SuscribeForm = () => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit(handleSubmitForm)}>
-        <label>Nombre</label>
-        <input
-          type="text"
-          {...register("firstName", {
-            required: true,
-          })}
-          aria-invalid={errors.firstName ? "true" : "false"}
-        />
-        {errors.firstName?.type === "required" && (
-          <p role="alert">Este campo es requerido</p>
-        )}
-        <label>Apellido</label>
-        <input
-          type="text"
-          {...register("lastName", {
-            required: true,
-          })}
-          aria-invalid={errors.lastName ? "true" : "false"}
-        />
-        {errors.lastName?.type === "required" && (
-          <p role="alert">Este campo es requerido</p>
-        )}
+    <Container className={styles.containerForm}>
+      <Row xs={1} md={2} lg={2} className="g-4 m-auto">
+        <Col>
+          <h2 className={styles.honkLogo}>Suscribete</h2>
+          <p className={styles.pStyle}> 
+            Completa este formulario con tus datos para recibir recomendaciones
+            y noticias semanales sobre películas en tu correo electrónico.
+          </p>
+        </Col>
+        <Col>
+          <Form onSubmit={handleSubmit(handleSubmitForm)} className="w-75">
+            <Form.Group controlId="formFirstName">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingrese su nombre"
+                {...register("firstName", { required: true })}
+                isInvalid={!!errors.firstName}
+              />
+              <Form.Control.Feedback type="invalid">
+                Este campo es requerido
+              </Form.Control.Feedback>
+            </Form.Group>
 
-        <label>Edad</label>
+            <Form.Group controlId="formLastName">
+              <Form.Label>Apellido</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingrese su apellido"
+                {...register("lastName", { required: true })}
+                isInvalid={!!errors.lastName}
+              />
+              <Form.Control.Feedback type="invalid">
+                Este campo es requerido
+              </Form.Control.Feedback>
+            </Form.Group>
 
-        <input
-          type="number"
-          {...register("age", {
-            required: true,
-            min: 1,
-            max: 120,
-            valueAsNumber: true,
-          })}
-          aria-invalid={errors.age ? "true" : "false"}
-        />
-        {errors.age?.type === "required" && (
-          <p role="alert">Este campo es requerido</p>
-        )}
-        {errors.age?.type === "min" && (
-          <p role="alert">La edad debe ser mayor o igual a 1</p>
-        )}
-        {errors.age?.type === "max" && (
-          <p role="alert">La edad debe ser menor o igual a 120</p>
-        )}
+            <Form.Group controlId="formAge">
+              <Form.Label>Edad</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Ingrese su edad"
+                {...register("age", {
+                  required: true,
+                  min: 1,
+                  max: 120,
+                  valueAsNumber: true,
+                })}
+                isInvalid={!!errors.age}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.age?.type === "required" && "Este campo es requerido"}
+                {errors.age?.type === "min" &&
+                  "La edad debe ser mayor o igual a 1"}
+                {errors.age?.type === "max" &&
+                  "La edad debe ser menor o igual a 120"}
+              </Form.Control.Feedback>
+            </Form.Group>
 
-        <label>Correo</label>
-        <input
-          type="email"
-          {...register("email", { required: "Este campo es requerido" })}
-          aria-invalid={errors.email ? "true" : "false"}
-        />
-        {errors.email && <p role="alert">{errors.email.message}</p>}
+            <Form.Group controlId="formEmail">
+              <Form.Label>Correo</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Ingrese su correo electrónico"
+                {...register("email", { required: "Este campo es requerido" })}
+                isInvalid={!!errors.email}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.email && errors.email.message}
+              </Form.Control.Feedback>
+            </Form.Group>
 
-        <button type="submit">Suscribirse</button>
-        <button type="button" onClick={handleResetForm}>
-          Limpiar
-        </button>
-      </form>
-    </>
+            <div className={styles.buttonGroup}>
+            <Button type="submit" className={styles.buttonGroupItem} id={styles.buttonGroupItem}>
+              Suscribirse
+            </Button>
+            <Button type="button" onClick={handleResetForm}  id={styles.buttonGroupItem}>
+              Limpiar
+            </Button>
+            </div>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

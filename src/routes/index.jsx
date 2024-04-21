@@ -2,7 +2,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Home from "../pages/Home";
 import MyNavbar from "../components/Navbar";
 import Detail from "../pages/Detail";
-import WatchedMoviesPage from "../pages/WatchedMoviesPage";
+import FavoriteMoviesPage from "../pages/FavoriteMoviesPage";
 import ToWatchMoviesPage from "../pages/ToWacthMoviesPage";
 import SubscribePage from "../pages/SubscribePage"
 import Error404 from "../pages/Error404";
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
         element: <Detail />,
       },
       {
-        path: "/watched-movies",
-        element: <WatchedMoviesPage/>,
+        path: "/favorite-movies",
+        element: <FavoriteMoviesPage/>,
       },
       {
         path: "/to-watch-movies",

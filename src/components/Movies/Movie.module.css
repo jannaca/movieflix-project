@@ -1,0 +1,30 @@
+.honkLogo {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 15, "SHLN" 50;
+  font-size: 60px;
+  margin: 40px 0;
+}
+
+.containerDivider {
+  background-color: antiquewhite;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #8b1bf5;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.986); /* Sombra */
+}
+
+.containerDividerElementOne {
+  color: #fff;
+}
+
+.containerDividerElementTwo {
+  font-size: 80px;
+}

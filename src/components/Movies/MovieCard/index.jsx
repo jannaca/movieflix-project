@@ -1,6 +1,6 @@
 import ButtonSeeMore from "../../ButtonSeeMore";
 import ButtonToAddToWatchList from "../../ButtonToAddToWatchList";
-import ButtonToAddToWatchedList from "../../ButtonToAddToWatchedList";
+import ButtonAddToFavorites from "../../ButtonAddToFavorites";
 import styles from "./MovieCard.module.css";
 
 const MovieCard = ({
@@ -8,7 +8,7 @@ const MovieCard = ({
   image,
   OnDetailClick,
   OnAddToWatchList,
-  OnAddToWatchedList,
+  OnAddToFavorites,
 }) => {
   return (
     <div className={styles.container}>
@@ -18,7 +18,7 @@ const MovieCard = ({
         <div className="mt-2">
           <ButtonSeeMore OnDetailClick={OnDetailClick} />
           <ButtonToAddToWatchList OnAddToWatchList={OnAddToWatchList} />
-          <ButtonToAddToWatchedList OnAddToWatchedList={OnAddToWatchedList} />
+          <ButtonAddToFavorites OnAddToFavorites={OnAddToFavorites} />
         </div>
       </div>
     </div>

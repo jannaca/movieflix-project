@@ -1,11 +1,16 @@
+/* .containerMovie {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  margin: auto;
+} */
 
-.containerMovie {
-    display: flex;
-    align-items: center;
-    height: 90vh;
-    margin: auto;
-  }
-  
-.infoMovieContainer {
+/* .infoMovieContainer {
   margin-left: 20px;
+} */
+
+
+.imageCotainer img {
+  max-width: 100%;
+  max-height: 100%;
 }
