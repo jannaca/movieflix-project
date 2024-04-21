@@ -41,7 +41,7 @@ const MoviesDetails = ({ movieDetail }) => {
             </p>
 
             <p>
-              <span className="fw-bold">Duranción: </span>
+              <span className="fw-bold">Duración: </span>
               {`${runtime} min`}{" "}
             </p>
             <div>
